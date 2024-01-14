@@ -1,7 +1,7 @@
 import React from "react";
 import ProductService from "../services/ProductService";
 
-class ProductComponent extends React.Component {
+class ProductsList extends React.Component {
 
     constructor(props) {
         super(props)
@@ -11,7 +11,7 @@ class ProductComponent extends React.Component {
     }
 
     componentDidMount() {
-        ProductService.getProducts().then((response) => {
+        ProductService.getAllProducts().then((response) => {
             this.setState({products: response.data})
         })
     }
@@ -38,6 +38,7 @@ class ProductComponent extends React.Component {
                                     <td>{product.price}</td>
                                     <td>{product.quantityAvailable}</td>
                                     <td>{product.modifiedDate}</td>
+                                    <td><button>Update</button></td>
                                 </tr>
                             )
                         }
@@ -47,4 +48,4 @@ class ProductComponent extends React.Component {
         )
     }
 }
-export default ProductComponent;
+export default ProductsList;
