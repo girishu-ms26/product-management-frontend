@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProductService from "../services/ProductService";
+import { Link } from "react-router-dom";
 
 const ProductsList = () => {
     const [products, setProducts] = useState([]);
@@ -30,7 +31,7 @@ const ProductsList = () => {
                             <td>{product.quantityAvailable}</td>
                             <td>{product.modifiedDate}</td>
                             <td>
-                                <button>Update</button>
+                            <Link to="/update"><button>Update</button></Link>
                             </td>
                         </tr>
                     ))}
