@@ -1,8 +1,8 @@
 import {Route,Routes} from "react-router-dom"
 import ProductsList from "./components/ProductsList"
-import Add from "./components/Add.js";
 import Update from "./components/Update.js";
 import { Link } from "react-router-dom";
+import Add from "./components/Add.js";
 
 
 function App() {
@@ -20,7 +20,8 @@ function App() {
             </nav>
             <Routes>
                 <Route path="/products" element={<ProductsList />} />
-                <Route path="/update" element={<Update />} />
+                <Route path="/update/" element={<Update />} />
+                <Route path="/add" element={<Add />} />
             </Routes>
         </>
     )
